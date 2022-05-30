@@ -1,0 +1,29 @@
+$primary: #f68b47;
+$secondary: #c62046;
+$white: #fff;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+);
+
+/*$utilities-colors: (
+    "body": $white,
+);*/
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.btn-primary,
+.btn-secondary {
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  color: white;
+}
+
+.btn-primary:focus,
+.btn-secondary:focus {
+  color: white;
+}
