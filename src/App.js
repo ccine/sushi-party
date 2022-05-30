@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from "./logo.png";
-import { Image, Form, Button } from "react-bootstrap";
+import React from "react";
 import "./App.css";
+import { BrowserRouter, Route, Routes, useNavigate, Link } from "react-router-dom";
+
+// Pagine
+import Home from './pages/Home';
+import Party from './pages/Party';
 
 function App() {
   return (
     <div className="App">
-      <Image src={logo} width="30%" className="App-logo" alt="logo" />
-      <h1>Sushi Party</h1>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Join Party
-        </Button>
-      </Form>
-      <Button variant="danger" type="submit">Create Party</Button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="Home" element={<Home />} />
+          <Route path="Party" element={<Party />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
