@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from "./logo.png";
 import { Image, Form, Button } from "react-bootstrap";
 import "./App.css";
@@ -5,7 +6,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Image src={logo} width="60%" className="App-logo" alt="logo" />
+      <Image src={logo} width="30%" className="App-logo" alt="logo" />
       <h1>Sushi Party</h1>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">

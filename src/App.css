@@ -75,7 +75,8 @@ body {
     border-color: rgba(246, 139, 71, 1);
 }
 
-.App {
+.App,
+.Develop {
   text-align: center;
 }
 
@@ -85,7 +86,7 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    /*animation: App-logo-spin infinite 20s linear;*/
   }
 }
 
