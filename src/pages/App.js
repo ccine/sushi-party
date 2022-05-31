@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
-import { BrowserRouter, Route, Routes, useNavigate, Link } from "react-router-dom";
+import "../styles/App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Pagine
-import Home from './pages/Home';
-import Party from './pages/Party';
+import Home from "./Home";
+import Party from "./Party";
 
 function App() {
   return (
