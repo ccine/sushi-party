@@ -5,10 +5,9 @@ import { Image, Form, Button } from "react-bootstrap";
 import "../styles/App.css";
 
 function Party() {
-
   return (
     <div>
-      <Logo />
+      <Logo className="w-100 mx-auto" style="margin-top: 5vh;" />
       <Title text="Party: XXXX"></Title>
       <OrderUI />
     </div>

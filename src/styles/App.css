@@ -82,8 +82,9 @@ html,
   text-align: center;
 }
 
-.App-logo {
+.logo {
   pointer-events: all;
+  max-width: 300px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

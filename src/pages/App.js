@@ -8,7 +8,7 @@ import Party from "./Party";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App vh-100">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
