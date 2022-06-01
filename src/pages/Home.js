@@ -1,6 +1,7 @@
 import React from "react";
-import logo from "../images/antisgamosgobbo.png";
-import { Image, Form, Button } from "react-bootstrap";
+import Logo from "../components/Logo";
+import Title from "../components/Title";
+import {  Form, Button } from "react-bootstrap";
 import "../styles/App.css";
 import "../styles/custom.scss";
 import { useNavigate } from "react-router-dom";
@@ -10,14 +11,8 @@ function Home() {
 
   return (
     <div className="App">
-      <Image
-        src={logo}
-        width="15%"
-        className="App-logo"
-        alt="logo"
-        onClick={() => navigate("/")}
-      />
-      <h1>Google Party</h1>
+      <Logo />
+      <Title text="Google Party"></Title>
       <LoginForm />
     </div>
   );

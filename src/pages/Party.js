@@ -1,22 +1,15 @@
 import React from "react";
-import logo from "../images/antisgamosgobbo.png";
+import Logo from "../components/Logo";
+import Title from "../components/Title";
 import { Image, Form, Button } from "react-bootstrap";
 import "../styles/App.css";
-import { useNavigate } from "react-router-dom";
 
 function Party() {
-  const navigate = useNavigate();
 
   return (
     <div>
-      <Image
-        src={logo}
-        width="15%"
-        className="App-logo"
-        alt="logo"
-        onClick={() => navigate("/")}
-      />
-      <h1>Party #XXXX</h1>
+      <Logo />
+      <Title text="Party: XXXX"></Title>
       <OrderUI />
     </div>
   );

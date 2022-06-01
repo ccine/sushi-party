@@ -12,8 +12,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="Home" element={<Home />} />
-          <Route path="Party" element={<Party />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Party" element={<Party />} />
         </Routes>
       </BrowserRouter>
     </div>
