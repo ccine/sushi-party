@@ -6,10 +6,13 @@ import "../styles/App.css";
 
 function Party() {
   return (
-    <div>
-      <Logo className="w-100 mx-auto" style="margin-top: 5vh;" />
-      <Title text="Party: XXXX"></Title>
-      <OrderUI />
+    <div
+      className="Home position-relative top-50 start-50 translate-middle"
+      style={{ width: "300px" }}
+    >
+      <Logo style="transform: translateY(-100%)" />
+      {/* <Title text="Party: XXXX"></Title>*/}
+      <OrderUI className="form-signin w-100 position-absolute top-0 start-0" />
     </div>
   );
 }
@@ -40,7 +43,7 @@ class OrderUI extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={this.props.className}>
         <InputPlate
           onClick={this.handleAddButton}
           onInputChange={this.handleChange}
@@ -55,42 +58,48 @@ class OrderUI extends React.Component {
 
 function InputPlate(props) {
   return (
-    <div>
-      <input
-        id="plate"
-        className="form-control form-control-lg w-25 m-auto mb-1"
-        type="text"
-        placeholder="Plate"
-        onChange={props.onInputChange}
-        value={props.plate}
-      />
-      <input
-        id="qty"
-        className="form-control form-control-lg w-25 m-auto mb-1"
-        type="number"
-        placeholder="Qty"
-        onChange={props.onInputChange}
-        value={props.qty}
-      />
-      <Button className="w-25 mb-1" size="lg" onClick={props.onClick}>
+    <React.Fragment>
+      <div className="d-flex">
+        <input
+          id="plate"
+          className="form-control form-control-lg w-50 me-1"
+          type="text"
+          placeholder="Plate"
+          onChange={props.onInputChange}
+          value={props.plate}
+        />
+        <input
+          id="qty"
+          className="form-control form-control-lg w-50"
+          type="number"
+          placeholder="Qty"
+          onChange={props.onInputChange}
+          value={props.qty}
+        />
+      </div>
+      <Button className="mt-1 mb-1 w-100" size="lg" onClick={props.onClick}>
         add
       </Button>
-    </div>
+    </React.Fragment>
   );
 }
 
 function UserPlateList(props) {
+  let buttonClass = "mt-0";
   const list = Object.keys(props.list).map((key) => (
-    <p className="list-group-item mb-0 w-25 m-auto" key={key}>
+    <p className="list-group-item mb-0 m-auto" key={key}>
       {key}, {props.list[key]}
     </p>
   ));
 
+  if (list.length !== 0) buttonClass = "mt-1";
+
   return (
     <div>
       {list}
-      <Button className="mt-0 w-25" variant="secondary" size="lg">
-        Place order che non fa niente
+
+      <Button className={buttonClass} variant="secondary" size="lg">
+        Place order che non fa niente però puoi premere il logo per tornare indietro
       </Button>
     </div>
   );

@@ -5,12 +5,13 @@ import { Form, Button } from "react-bootstrap";
 // Styles
 import "../styles/App.css";
 import "../styles/custom.scss";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-export default function LoginForm() {
+export default function LoginForm(props) {
   const navigate = useNavigate();
 
   return (
-    <div id="login-form" className="form-signin mx-auto my-0">
+    <div id="login-form" className={props.className}>
       <Form>
         <Form.Group className="mb-1" controlId="formBasicEmail">
           <Form.Control

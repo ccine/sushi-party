@@ -5,10 +5,10 @@ import LoginForm from "../components/LoginForm";
 
 function Home() {
   return (
-    <div className="Home d-flex flex-column vh-100 align-item-center justify-content-center">
-      <Logo className="w-100 mx-auto" />
+    <div className="Home position-relative top-50 start-50 translate-middle" style={{"width" : "300px"}}>
+      <Logo style="transform: translateY(-100%)" />
       {/*<Title text="Google Party"></Title>*/}
-      <LoginForm />
+      <LoginForm className="form-signin w-100 position-absolute top-0 start-0"/>
     </div>
   );
 }
