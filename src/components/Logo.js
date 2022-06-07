@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/logo.png";
+import logo from "../images/antisgamosgobbo.png";
 import { useNavigate } from "react-router-dom";
 import { Image } from "react-bootstrap";
 
@@ -10,7 +10,7 @@ export default function Logo(props) {
     <Image
       src={logo}
       className={"logo " + props.className}
-      Style={props.style}
+      style={props.style}
       alt="logo"
       onClick={() => navigate("/Home")}
     />

@@ -5,7 +5,6 @@ import { Form, Button } from "react-bootstrap";
 // Styles
 import "../styles/App.css";
 import "../styles/custom.scss";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 export default function LoginForm(props) {
   const navigate = useNavigate();
