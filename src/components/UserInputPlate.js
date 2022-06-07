@@ -43,7 +43,7 @@ export default function UserInputPlate(props) {
         />
       </div>
       <Button className="mt-1 mb-1 w-100" size="lg" onClick={sendPlate}>
-        add
+        Add
       </Button>
     </React.Fragment>
   );

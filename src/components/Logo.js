@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/antisgamosgobbo.png";
+import logo from "../images/logo.png";
 import { useNavigate } from "react-router-dom";
 import { Image } from "react-bootstrap";
 

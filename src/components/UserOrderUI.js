@@ -23,7 +23,6 @@ export default function UserOrderUI(props) {
       Object.assign(current_plate_list, plateList);
 
       delete current_plate_list[id];
-      console.log(current_plate_list);
       setPlateList(current_plate_list);
     }
   }

@@ -2,15 +2,17 @@ import React from "react";
 
 export default function TrashIcon(props) {
   return (
-    <div className="d-flex align-items-middle">
+    <div
+      className="d-flex align-items-middle"
+      id={props.id}
+      onClick={props.onClick}
+    >
       <svg
-        id={props.id}
-        onClick={props.onClick}
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
         fill="currentColor"
-        class="bi bi-trash3"
+        className="bi bi-trash3 pe-none"
         viewBox="0 0 16 16"
         color="red"
       >
