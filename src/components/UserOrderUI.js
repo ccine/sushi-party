@@ -19,8 +19,7 @@ export default function UserOrderUI(props) {
 
   function handleSelfErase(id) {
     if (plateList.hasOwnProperty(id)) {
-      let current_plate_list = {};
-      Object.assign(current_plate_list, plateList);
+      let current_plate_list = { ...plateList };
 
       delete current_plate_list[id];
       setPlateList(current_plate_list);

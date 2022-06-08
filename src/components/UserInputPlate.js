@@ -29,20 +29,21 @@ export default function UserInputPlate(props) {
     <React.Fragment>
       <div className="d-flex">
         <input
-          className="form-control form-control-lg w-50 me-1"
+          className="form-control form-control w-50 me-1"
+          type={"number"}
           placeholder="Plate"
           value={plate}
           onChange={handlePlateChange}
         />
         <input
-          className="form-control form-control-lg w-50"
+          className="form-control form-control w-50"
           type={"number"}
           placeholder="Qty"
           value={qty}
           onChange={handleQtyChange}
         />
       </div>
-      <Button className="mt-1 mb-1 w-100" size="lg" onClick={sendPlate}>
+      <Button className="mt-1 mb-1 w-100" onClick={sendPlate}>
         Add
       </Button>
     </React.Fragment>

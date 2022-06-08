@@ -1,14 +1,12 @@
 $primary: #f68b47;
 $secondary: #c62046;
+$pink: #fcb4b4;
 
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
 );
 
-/*$utilities-colors: (
-    "body": $white,
-);*/
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 .btn-primary,
