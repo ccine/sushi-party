@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import ShowUserListBtn from "./ShowUserListBtn";
 
 export default function UserInputPlate(props) {
   const [plate, setPlate] = useState("");
@@ -29,23 +30,26 @@ export default function UserInputPlate(props) {
     <React.Fragment>
       <div className="d-flex">
         <input
-          className="form-control form-control w-50 me-1"
+          className="form-control w-50 me-1"
           type={"number"}
           placeholder="Plate"
           value={plate}
           onChange={handlePlateChange}
         />
         <input
-          className="form-control form-control w-50"
+          className="form-control w-50"
           type={"number"}
           placeholder="Qty"
           value={qty}
           onChange={handleQtyChange}
         />
       </div>
-      <Button className="mt-1 mb-1 w-100" onClick={sendPlate}>
-        Add
-      </Button>
+      <div className="d-flex w-100 mt-1 mb-1">
+        <Button className="me-1 w-50" onClick={sendPlate}>
+          Add
+        </Button>
+        <ShowUserListBtn className="w-50" itemCount={props.itemCount} onClick={props.onListBtnClick} btnActive={props.btnActive} > </ShowUserListBtn>
+      </div>
     </React.Fragment>
   );
 }

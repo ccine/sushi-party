@@ -1,0 +1,9 @@
+#badge-pink {
+    background-color: var(--bs-pink);
+    border: 2px solid #f5f5f5;
+    transform: translate(20%, -20%);
+  }
+
+#btn {
+    background-color: var(--bs-pink);
+}
