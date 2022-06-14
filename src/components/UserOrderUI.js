@@ -5,11 +5,10 @@ import UserInputPlate from "./UserInputPlate";
 
 export default function UserOrderUI(props) {
   const [plateList, setPlateList] = useState({});
-  const [toggleUserList, setToggleUserList] = useState(false);
+  const [toggleUserList, setToggleUserList] = useState(true);
 
   function handleGetPlate(plate, qty) {
-    let current_plate_list = {};
-    Object.assign(current_plate_list, plateList);
+    let current_plate_list = { ...plateList };
 
     current_plate_list[plate] !== undefined
       ? (current_plate_list[plate] += parseInt(qty))
@@ -33,19 +32,13 @@ export default function UserOrderUI(props) {
 
   return (
     <div className={props.className}>
-      <div className="d-flex flex-wrap w-100 align-items-center justify-content-between">
-        <UserInputPlate
-          getPlate={handleGetPlate}
-          onListBtnClick={InvertToggleList}
-          itemCount={Object.keys(plateList).length}
-          btnActive={toggleUserList}
-        />
-      </div>
-      <UserPlateList
-        list={plateList}
-        selfErase={handleSelfErase}
-        showList={toggleUserList}
+      <UserInputPlate
+        getPlate={handleGetPlate}
+        onListBtnClick={InvertToggleList}
+        itemCount={Object.keys(plateList).length}
+        btnActive={toggleUserList}
       />
+      <UserPlateList list={plateList} selfErase={handleSelfErase} showList={toggleUserList} />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import QtyManipulator from "./QtyManipulator";
 import ShowUserListBtn from "./ShowUserListBtn";
 
 export default function UserInputPlate(props) {
@@ -8,13 +9,18 @@ export default function UserInputPlate(props) {
   const [qty, setQty] = useState(1);
 
   function handlePlateChange(e) {
+    /*TODO sistema quando non è presente nessun valore scrive anche lettere
+    comportamento boh*/
     const reg = /^\d+$/;
     if (reg.test(e.target.value)) setPlate(e.target.value);
   }
 
-  function handleQtyChange(e) {
-    const reg = /^\d+$/;
-    if (reg.test(e.target.value)) setQty(e.target.value);
+  function decrQty() {
+    if (qty > 1) setQty(qty - 1);
+  }
+
+  function incrQty() {
+    setQty(qty + 1);
   }
 
   function sendPlate(e) {
@@ -31,24 +37,28 @@ export default function UserInputPlate(props) {
       <div className="d-flex">
         <input
           className="form-control w-50 me-1"
-          type={"number"}
+          type="number"
           placeholder="Plate"
           value={plate}
           onChange={handlePlateChange}
         />
-        <input
-          className="form-control w-50"
-          type={"number"}
-          placeholder="Qty"
-          value={qty}
-          onChange={handleQtyChange}
+        <QtyManipulator
+          className="w-50"
+          onIncrement={incrQty}
+          onDecrement={decrQty}
+          displayQty={qty}
         />
       </div>
       <div className="d-flex w-100 mt-1 mb-1">
         <Button className="me-1 w-50" onClick={sendPlate}>
           Add
         </Button>
-        <ShowUserListBtn className="w-50" itemCount={props.itemCount} onClick={props.onListBtnClick} btnActive={props.btnActive} > </ShowUserListBtn>
+        <ShowUserListBtn
+          className="w-50"
+          itemCount={props.itemCount}
+          onClick={props.onListBtnClick}
+          btnActive={props.btnActive}
+        />
       </div>
     </React.Fragment>
   );
