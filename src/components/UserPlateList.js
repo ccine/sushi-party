@@ -8,7 +8,7 @@ export default function UserPlateList(props) {
   const MAX_LIST_ITEMS = 3;
   const ITEM_HEIGHT = 4.0; //rem
   const props_list_array = Object.keys(props.list);
-  let list_style = {};
+  let styles_list = {};
 
   // Handler che gestisce l'autocancellazione del record
   function handleClick(e) {
@@ -17,7 +17,7 @@ export default function UserPlateList(props) {
 
   // Setta il limite di entry visibili in lista
   if (props_list_array.length >= MAX_LIST_ITEMS) {
-    list_style["maxHeight"] = ITEM_HEIGHT * MAX_LIST_ITEMS + "rem";
+    styles_list["maxHeight"] = ITEM_HEIGHT * MAX_LIST_ITEMS + "rem";
   }
 
   // Crea lista con i piatti
@@ -33,12 +33,12 @@ export default function UserPlateList(props) {
   ));
 
   return (
-    <React.Fragment>
+    <>
       {props.showList && props_list_array.length > 0 && (
-        <ul className="list-group" style={list_style}>
+        <ul className="list-group mb-1" style={styles_list}>
           {list}
         </ul>
       )}
-    </React.Fragment>
+    </>
   );
 }

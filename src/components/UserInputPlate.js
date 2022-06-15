@@ -33,7 +33,7 @@ export default function UserInputPlate(props) {
   }
 
   return (
-    <React.Fragment>
+    <>
       <div className="d-flex">
         <input
           className="form-control w-50 me-1"
@@ -60,6 +60,6 @@ export default function UserInputPlate(props) {
           btnActive={props.btnActive}
         />
       </div>
-    </React.Fragment>
+    </>
   );
 }
