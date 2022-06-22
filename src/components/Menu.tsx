@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Offcanvas } from "react-bootstrap";
 
-export default function Menu(props) {
+export default function Menu(props: any) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

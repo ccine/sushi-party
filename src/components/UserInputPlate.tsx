@@ -4,11 +4,11 @@ import { Button } from "react-bootstrap";
 import QtyManipulator from "./QtyManipulator";
 import ShowUserListBtn from "./ShowUserListBtn";
 
-export default function UserInputPlate(props) {
+export default function UserInputPlate(props: { getPlate: (plate: string | number, qty: number) => void; itemCount: any; onListBtnClick: any; btnActive: any; }) {
   const [plate, setPlate] = useState("");
   const [qty, setQty] = useState(1);
 
-  function handlePlateChange(e) {
+  function handlePlateChange(e : any) {
     /*TODO sistema quando non è presente nessun valore scrive anche lettere
     comportamento boh*/
     const reg = /^\d+$/;
@@ -23,7 +23,7 @@ export default function UserInputPlate(props) {
     setQty(qty + 1);
   }
 
-  function sendPlate(e) {
+  function sendPlate(e: any) {
     if (plate === "" || qty <= 0) return;
 
     props.getPlate(plate, qty);

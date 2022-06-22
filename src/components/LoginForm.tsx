@@ -7,7 +7,7 @@ import { gql, useLazyQuery } from "@apollo/client";
 import "../styles/App.css";
 import "../styles/custom.scss";
 
-export default function LoginForm(props) {
+export default function LoginForm(props: any) {
   const navigate = useNavigate();
 
   const ENTERPARTY = gql`

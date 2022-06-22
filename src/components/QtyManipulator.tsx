@@ -1,7 +1,7 @@
 import React from "react";
 import { InputGroup, FormControl } from "react-bootstrap";
 
-export default function QtyManipulator(props) {
+export default function QtyManipulator(props: any) {
   return (
     <InputGroup className={props.className}>
       <InputGroup.Text as="button" onClick={props.onDecrement}>

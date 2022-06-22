@@ -4,9 +4,12 @@ import { Button } from "react-bootstrap";
 // Styles
 import "../styles/ShowUserListBtn.css";
 
-export default function ShowUserListBtn(props) {
+export default function ShowUserListBtn(props: any) {
   let badge = (
-    <span id="badge-pink" className="position-absolute top-0 end-0 badge rounded-pill">
+    <span
+      id="badge-pink"
+      className="position-absolute top-0 end-0 badge rounded-pill"
+    >
       {props.itemCount}
     </span>
   );
@@ -27,7 +30,8 @@ export default function ShowUserListBtn(props) {
   return (
     <Button
       className={
-        props.className + " position-relative d-flex justify-content-center align-items-center"
+        props.className +
+        " position-relative d-flex justify-content-center align-items-center"
       }
       variant="pink"
       onClick={props.onClick}

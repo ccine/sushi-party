@@ -1,9 +1,8 @@
-import React from "react";
-import logo from "../images/antisgamosgobbo.png";
+import logo from '../images/logo.png';
 import { useNavigate } from "react-router-dom";
 import { Image } from "react-bootstrap";
 
-export default function Logo(props) {
+export default function Logo(props: any) {
   const navigate = useNavigate();
   let style = props.style ? { ...props.style } : {};
 
