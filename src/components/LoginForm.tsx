@@ -25,7 +25,7 @@ export default function LoginForm(props: any) {
           <Form.Control
             size="lg"
             className="mb-1"
-            type="email"
+            type="user"
             placeholder="Nickname"
           />
           <Form.Control size="lg" type="password" placeholder="Party code" />
