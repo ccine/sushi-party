@@ -6,9 +6,8 @@ import Menu from "./Menu";
 
 export default function UserOrderUI(props: { className: string | undefined }) {
 	const [plateList, setPlateList] = useState({});
+	const [plateOrdered, setPlateOrdered] = useState({});
 	const [toggleUserList, setToggleUserList] = useState(true);
-
-	localStorage.clear();
 
 	function handleAddPlate(plate: string | number, qty: number) {
 		let current_plate_list: { [plate: string]: number } = { ...plateList };
@@ -18,6 +17,11 @@ export default function UserOrderUI(props: { className: string | undefined }) {
 			: (current_plate_list[plate] = qty);
 
 		setPlateList(current_plate_list);
+	}
+
+	function handleOrderPlate() {
+		setPlateOrdered(Object.assign({}, plateOrdered, plateList));
+		setPlateList({});
 	}
 
 	function handleSelfErase(id: string | number) {
@@ -34,24 +38,18 @@ export default function UserOrderUI(props: { className: string | undefined }) {
 	}
 
 	return (
-		<>
-			<div className={props.className}>
-				<UserInputPlate
-					getPlate={handleAddPlate}
-					onListBtnClick={InvertToggleList}
-					itemCount={Object.keys(plateList).length}
-					btnActive={toggleUserList}
-				/>
-				<UserPlateList
-					list={plateList}
-					selfErase={handleSelfErase}
-					showList={toggleUserList}
-				/>
-				<Button className="w-100 mb-1" variant="secondary" onClick={() => setPlateList({})}>
-					Place order
-				</Button>
-				<Menu className="h-auto w-auto"></Menu>
-			</div>
-		</>
+		<div className={props.className}>
+			<UserInputPlate
+				getPlate={handleAddPlate}
+				onListBtnClick={InvertToggleList}
+				itemCount={Object.keys(plateList).length}
+				btnActive={toggleUserList}
+			/>
+			<UserPlateList list={plateList} selfErase={handleSelfErase} showList={toggleUserList} />
+			<Button className="w-100 mb-1" variant="secondary" onClick={handleOrderPlate}>
+				Place order
+			</Button>
+			<Menu className="h-auto w-auto" list={plateOrdered}></Menu>
+		</div>
 	);
 }
