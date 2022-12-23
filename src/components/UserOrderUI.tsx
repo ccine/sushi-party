@@ -5,11 +5,12 @@ import UserInputPlate from "./UserInputPlate";
 import Menu from "./Menu";
 
 export default function UserOrderUI(props: { className: string | undefined }) {
-	const [plateList, setPlateList] = useState({});
-	const [plateOrdered, setPlateOrdered] = useState({});
+	const [plateList, setPlateList] = useState<{ [plate: string]: number }>({});
+	const [plateOrdered, setPlateOrdered] = useState<{ [plate: string]: number }>({});
 	const [toggleUserList, setToggleUserList] = useState(true);
 
 	function handleAddPlate(plate: string | number, qty: number) {
+		if (plate == 0) return;
 		let current_plate_list: { [plate: string]: number } = { ...plateList };
 
 		current_plate_list[plate] !== undefined
@@ -20,7 +21,15 @@ export default function UserOrderUI(props: { className: string | undefined }) {
 	}
 
 	function handleOrderPlate() {
-		setPlateOrdered(Object.assign({}, plateOrdered, plateList));
+		let newOrderList = { ...plateOrdered };
+
+		for (let plate in plateList) {
+			newOrderList[plate]
+				? (newOrderList[plate] += plateList[plate])
+				: (newOrderList[plate] = plateList[plate]);
+		}
+
+		setPlateOrdered(newOrderList);
 		setPlateList({});
 	}
 
